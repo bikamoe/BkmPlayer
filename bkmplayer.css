@@ -31,9 +31,9 @@
     background-color: black;
 }
 
-/* #bkmplayer>.warp>video::cue{
+#bkmplayer>.warp>video::cue{
     font-size: 22px;
-} */
+}
 
 #bkmplayer>.loading{
     position: absolute;
