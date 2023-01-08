@@ -54,9 +54,7 @@
         <div class="tips"><span></span></div>
         <div class="timetips"><span></span></div>
         <div class="warp">
-            <video playsinline x5-playsinline webkit-playsinline preload="metadata">
-                <track src="web.vtt" kind="subtitles" label="chinese" srclang="zh" default="true">
-            </video>
+            <video playsinline x5-playsinline webkit-playsinline preload="metadata"></video>
         </div>
         <div class="control">
             <div class="action">
@@ -164,9 +162,16 @@
         Player = new BKMPlayer({
             autoplay: true,
             video:{
-                url:'https://ads-video-qn.xiaohongshu.com/recruit/17b36eeec3066b4e8edbf10287b24797d109d44d',
+                url:'https://ads-video-qn.xiaohongshu.com/recruit/e8119607dc428f9ab58d62cd942dd0a923c647b6',
                 title: 'BkmPlayer'
-            }
+            },
+            danmaku:{
+                api:'https://bacg.me/danmaku',
+                vid:'1000',
+                bilivid:'BV1Ei4y1A7yL',
+                token:''
+            },
+            subtitle:'web.vtt'
         });
     } catch (error) {
         alert('BKMPlayer初始化失败:'+error);
