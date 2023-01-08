@@ -92,7 +92,7 @@
 #bkmplayer>.control{
     position: absolute;
     width: 100%;
-    height: 40px;
+    height: 50px;
     left: 0;
     bottom: 0;
     background-image: linear-gradient(rgba(21,21,21,0), rgba(21,21,21,0.7));
@@ -100,6 +100,10 @@
     vertical-align: top;
     z-index: 103;
     font-size: 0;
+}
+
+#bkmplayer>.control.full{
+    height: 60px;
 }
 
 #bkmplayer>.header{
@@ -111,7 +115,7 @@
     background-image: linear-gradient(rgba(21,21,21,0.7),rgba(21,21,21,0));
     transition: opacity .8s;
     vertical-align: top;
-    z-index: 103;
+    z-index: 105;
     font-size: 0;
 }
 
@@ -126,6 +130,7 @@
     align-items: center;
     flex-wrap: nowrap;
     flex-direction: row;
+    height: 100%;
 }
 
 #bkmplayer>.control>.action>.right{
@@ -172,6 +177,12 @@
     opacity: .8;
 }
 
+#bkmplayer>.control.full .btn-play{
+    width: 32px;
+    height: 32px;
+    transform: scale(1.2);
+}
+
 #bkmplayer>.control .btn-play span{
     display: block;
     width: 100%;
@@ -193,11 +204,14 @@
     position: relative;
     display: inline-block;
     width: 100px;
-    margin-right: 0 8px;
+    margin: 0 8px;
     vertical-align: top;
     font-size: 12px;
     color: #FFFFFF;
-    
+}
+
+#bkmplayer>.control.full .time{
+    font-size: 14px;
 }
 
 #bkmplayer>.control .time span:nth-child(1){
@@ -215,6 +229,11 @@
     margin: 0 8px;
     cursor: pointer;
     opacity: .8;
+}
+
+#bkmplayer>.control.full .fullscreen{
+    width: 32px;
+    transform: scale(1.2);
 }
 
 #bkmplayer>.control .fullscreen span{
@@ -253,16 +272,20 @@
     position: absolute;
     width: calc(100% - 20px);
     height: 16px;
-    bottom: 32px;
+    bottom: 38px;
     cursor: pointer;
     left: 10px;
     transition: opacity .8s;
 }
 
-#bkmplayer>.control>.progress:hover>div{
-    height: 4px;
-    bottom: 5px;
+#bkmplayer>.control.full>.progress{
+    bottom: 48px;
 }
+
+/* #bkmplayer>.control>.progress:hover>div{
+    height: 6px;
+    bottom: 5px;
+} */
 
 #bkmplayer>.control>.progress:hover>div>.icon{
     transform: scale(1);
@@ -271,16 +294,26 @@
 #bkmplayer>.control>.progress>.current{
     position: absolute;
     width: 0%;
-    height: 2px;
+    height: 4px;
     bottom: 6px;
     transition: height .3s,bottom .3s;
     background-color: #1E9FFF;
     /* overflow: hidden; */
 }
 
+#bkmplayer>.control>.progress>.loaded{
+    position: absolute;
+    width: 0%;
+    height: 4px;
+    bottom: 6px;
+    transition: .3s;
+    background-color: rgba(255,255,255,.5);
+    /* overflow: hidden; */
+}
+
 #bkmplayer>.control>.progress>.current>.icon{
     position: absolute;
-    right: -10px;
+    left: calc(100% - 8px);
     top: -8px;
     width: 18px;
     height: 18px;
@@ -294,7 +327,7 @@
 #bkmplayer>.control>.progress>.duration{
     position: absolute;
     width: 100%;
-    height: 2px;
+    height: 4px;
     bottom: 6px;
     transition: .3s;
     background-color: rgba(255,255,255,.4);
@@ -361,11 +394,14 @@
 #bkmplayer .timetips{
     position: absolute;
     height: 20px;
-    bottom: 50px;
+    bottom: 52px;
     z-index: 103;
     text-align: center;
     display: none;
-    
+}
+
+#bkmplayer .timetips.full{
+    bottom: 62px;
 }
 
 #bkmplayer .timetips>span{
@@ -415,13 +451,14 @@
 
 #bkmplayer .danmaku{
     position: absolute;
-    padding: 22px 0;
+    /* padding: 20px 0; */
+    top: 20px;
     width: 100%;
     height: 50%;
     overflow: hidden;
     z-index: 104;
     pointer-events: none;
-    line-height: 28px;
+    line-height: 22px;
     
 }
 
@@ -483,7 +520,7 @@
     box-shadow: none
 }
 
-#bkmplayer .danmaku-send>.danmanku-info{
+#bkmplayer .danmaku-send>.danmaku-info{
     height: 45px;
     line-height: 45px;
     font-size: 13px;
@@ -492,31 +529,31 @@
     flex-shrink: 0;
 }
 
-#bkmplayer.bkmplayer-dark .danmaku-send>.danmanku-info{
+#bkmplayer.bkmplayer-dark .danmaku-send>.danmaku-info{
     color: rgba(255, 255, 255, .8);
 }
 
-#bkmplayer .danmaku-send>.danmanku-input{
+#bkmplayer .danmaku-send>.danmaku-input{
     position: relative;
     overflow: hidden;
     color: #444;
     background: #f4f4f4;
-    height: 35px;
+    height: 30px;
     width: 100%;
     border-radius: 8px;
-    margin: 0 10px;
+    margin: 0 18px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
 }
 
-#bkmplayer.bkmplayer-dark .danmaku-send>.danmanku-input{
+#bkmplayer.bkmplayer-dark .danmaku-send>.danmaku-input{
     color: #fff;
     background: #0f0f1e;
 }
 
-#bkmplayer .danmaku-send>.danmanku-input>.danmaku-type{
+#bkmplayer .danmaku-send>.danmaku-input>.danmaku-type{
     width: 24px;
     height: 24px;
     margin: 0 4px;
@@ -529,15 +566,15 @@
     flex-shrink: 0;
 }
 
-#bkmplayer .danmaku-send>.danmanku-input>.danmaku-type:hover{
+#bkmplayer .danmaku-send>.danmaku-input>.danmaku-type:hover{
     opacity: 1;
 }
 
-#bkmplayer.bkmplayer-dark .danmaku-send>.danmanku-input>.danmaku-type{
+#bkmplayer.bkmplayer-dark .danmaku-send>.danmaku-input>.danmaku-type{
     background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmIiB3aWR0aD0iMjJweCIgaGVpZ2h0PSIyMnB4IiB2aWV3Qm94PSIwIDAgMjIgMjIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PHBhdGggZD0iTTE3IDE2SDVjLS41NSAwLTEgLjQ1LTEgMXMuNDUgMSAxIDFoMTJjLjU1IDAgMS0uNDUgMS0xcy0uNDUtMS0xLTF6TTYuOTYgMTVjLjM5IDAgLjc0LS4yNC44OS0uNmwuNjUtMS42aDVsLjY2IDEuNmMuMTUuMzYuNS42Ljg5LjYuNjkgMCAxLjE1LS43MS44OC0xLjM0bC0zLjg4LTguOTdDMTEuODcgNC4yNyAxMS40NiA0IDExIDRzLS44Ny4yNy0xLjA1LjY5bC0zLjg4IDguOTdjLS4yNy42My4yIDEuMzQuODkgMS4zNHpNMTEgNS45OEwxMi44NyAxMUg5LjEzTDExIDUuOTh6Ij48L3BhdGg+PC9zdmc+);
 }
 
-#bkmplayer .danmaku-send>.danmanku-input>input{
+#bkmplayer .danmaku-send>.danmaku-input>input{
     width: 100%;
     min-width: 100px;
     box-sizing: border-box;
@@ -547,11 +584,11 @@
     border: none;
 }
 
-#bkmplayer.bkmplayer-dark .danmaku-send>.danmanku-input>input{
+#bkmplayer.bkmplayer-dark .danmaku-send>.danmaku-input>input{
     color: #fff;
 }
 
-#bkmplayer .danmaku-send>.danmanku-input>button{
+#bkmplayer .danmaku-send>.danmaku-input>button{
     width: 60px;
     height: 100%;
     cursor: pointer;
@@ -560,5 +597,5 @@
     border: none;
     background-color: #353580;
     color: #fff;
-    font-size: 13px;
+    font-size: 12px;
 }
