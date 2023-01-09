@@ -2,7 +2,7 @@
 /*!
  * BKMPlayer v1.4.0
  * Released under the MIT License.
- * https://github.com/bikamoe/BKMPlayer
+ * https://github.com/bikamoe/BkmPlayer
  */
 import { BKMPlayer } from "./player";
 
