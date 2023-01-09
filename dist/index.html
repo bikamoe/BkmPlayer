@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BKMPlayer</title>
+</head>
+<style>
+    html,body{
+        margin: 0;
+        padding: 0;
+        background-color: #0f0f1e;
+    }
+
+    a{
+        color: #fff;
+    }
+
+    .bkmplayer{
+        width: 960px;
+        margin: 30px auto;
+    }
+
+    .changelog{
+        width: 960px;
+        margin: 70px auto;
+        color: #fff;
+        line-height: 22px;
+    }
+
+    .changelog>p{
+        font-size: 13px;
+        margin: 0;
+        opacity: .9;
+    }
+</style>
+<body>
+<div class="bkmplayer"></div>
+<div class="changelog">
+    <h2>ChangeLog(从V1.40开始记录)</h2>
+    <h3>V1.40</h3>
+    <p>[新增] 弹幕系统 (由 <a target="_blank" href="https://github.com/weizhenye/Danmaku">weizhenye/Danmaku</a> 提供支持 )</p>
+    <p>[新增] 暗色模式</p>
+    <p>[新增] 画中画模式</p>
+    <p>[新增] 支持webvtt字幕</p>
+    <p>[TODO] [新增] 音量控制</p>
+    <p>[TODO] [新增] 倍速播放</p>
+    <p>[TODO] [新增] 滑动控制播放进度</p>
+    <p>[优化] 右键菜单</p>
+    <p>[TODO] [优化] 多剧集模式</p>
+    <p>[TODO] [优化] 控制面板的隐藏</p>
+    <p>[优化] 全屏模式控制面板放大</p>
+</div>
+<script src="bkmplayer.min.js"></script>
+<script>
+    let Player;
+    try {
+        Player = new BKMPlayer({
+            autoplay: true,
+            video:{
+                url:'https://ads-video-qn.xiaohongshu.com/recruit/e8119607dc428f9ab58d62cd942dd0a923c647b6',
+                title: 'BkmPlayer'
+            },
+            danmaku:{
+                api:'https://bacg.me/danmaku',
+                vid:'1000',
+                bilivid:'BV1Ei4y1A7yL',
+                token:''
+            },
+            subtitle:'web.vtt'
+        });
+    } catch (error) {
+        alert('BKMPlayer初始化失败:'+error);
+    }
+</script>
+</body>
+</html>
