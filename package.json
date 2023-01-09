@@ -14,7 +14,7 @@
     }
   },
   "scripts": {
-    "watch": "npx parcel watch",
+    "dev": "npx parcel watch",
     "build": "npx parcel build"
   },
   "repository": {
@@ -28,6 +28,7 @@
     "jquery": "^3.6.3"
   },
   "devDependencies": {
+    "@parcel/transformer-inline-string": "^2.8.2",
     "@parcel/transformer-sass": "^2.8.2",
     "parcel": "^2.8.2"
   }
