@@ -22,6 +22,11 @@
         margin: 30px auto;
     }
 
+    .bkmplayer2{
+        width: 960px;
+        margin: 30px auto;
+    }
+
     .changelog{
         width: 960px;
         margin: 70px auto;
@@ -37,6 +42,8 @@
 </style>
 <body>
 <div class="bkmplayer"></div>
+<!-- <div class="bkmplayer2"></div> -->
+
 <div class="changelog">
     <h2>ChangeLog(从V1.40开始记录)</h2>
     <h3>V1.40</h3>
@@ -57,6 +64,7 @@
     let Player;
     try {
         Player = new BKMPlayer({
+            stylemode: 'dark',
             autoplay: true,
             video:{
                 url:'https://ads-video-qn.xiaohongshu.com/recruit/0073b3065bb09876a1514397f479cdd7f5aac2ad',
@@ -73,6 +81,27 @@
     } catch (error) {
         alert('BKMPlayer初始化失败:'+error);
     }
+
+/*     let Player2;
+    try {
+        Player2 = new BKMPlayer({
+            container: document.querySelector('.bkmplayer2'),
+            autoplay: true,
+            video:{
+                url:'https://ads-video-qn.xiaohongshu.com/recruit/0073b3065bb09876a1514397f479cdd7f5aac2ad',
+                title: 'BkmPlayer2'
+            },
+            danmaku:{
+                api:'https://bacg.me/danmaku',
+                vid:'1000',
+                bilivid:'BV1Ei4y1A7yL',
+                token:''
+            },
+            subtitle:'dist/sub.vtt'
+        });
+    } catch (error) {
+        alert('BKMPlayer初始化失败:'+error);
+    } */
 </script>
 </body>
 </html>
